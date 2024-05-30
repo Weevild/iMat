@@ -49,15 +49,15 @@ public class ProfileViewController {
     @FXML
     private TextField addressTextField;
     @FXML
-    private Button addressChangeButton;
-    @FXML
-    private Label currentAddressLabel;
-    @FXML
     private TextField postalCodeTextField;
     @FXML
     private TextField cityTextField;
     @FXML
     private TextField apartmentNumberTextField;
+    @FXML
+    private Button addressChangeButton;
+    @FXML
+    private Label currentAddressLabel;
     @FXML
     private TextField cardHolderTextField;
     @FXML
@@ -86,12 +86,9 @@ public class ProfileViewController {
         makeFieldsUneditable();
 
         setupEditableTextField(nameTextField, nameChangeButton, this::changeName);
-        setupEditableTextField(phoneTextField, phoneChangeButton, this::changePhone);
+        setupEditableFieldsForAddress(addressChangeButton, addressTextField, postalCodeTextField, cityTextField, apartmentNumberTextField);
         setupEditableTextField(emailTextField, emailChangeButton, this::changeEmail);
-        setupEditableTextField(addressTextField, addressChangeButton, this::changeAddress);
-        setupEditableTextField(postalCodeTextField, addressChangeButton, this::changePostalCode);
-        setupEditableTextField(cityTextField, addressChangeButton, this::changeCity);
-        setupEditableTextField(apartmentNumberTextField, addressChangeButton, this::changeApartmentNumber);
+        setupEditableTextField(phoneTextField, phoneChangeButton, this::changePhone);
         setupEditableTextField(cardHolderTextField, cardChangeButton, this::changeCardHolder);
         setupEditableTextField(cardNumberTextField, cardChangeButton, this::changeCardNumber);
         setupEditableTextField(securityCodeTextField, cardChangeButton, this::changeSecurityCode);
@@ -155,6 +152,27 @@ public class ProfileViewController {
         expirationDatePicker.setEditable(false);
     }
 
+    private void setupEditableFieldsForAddress(Button changeButton, TextField... textFields) {
+        changeButton.setOnMouseClicked(event -> {
+            for (TextField textField : textFields) {
+                makeEditable(textField);
+                textField.setStyle(""); // Clear previous error styles
+            }
+            textFields[0].requestFocus(); // Set focus to the first text field
+        });
+        for (TextField textField : textFields) {
+            textField.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    for (TextField tf : textFields) {
+                        makeUneditable(tf);
+                    }
+                    changeAddress(); // Change address details when Enter is pressed
+                    updateProfileLabels(); // Update labels immediately after changing
+                }
+            });
+        }
+    }
+
     private void setupEditableTextField(TextField textField, Button changeButton, Runnable changeMethod) {
         changeButton.setOnMouseClicked(event -> {
             makeEditable(textField);
@@ -163,21 +181,11 @@ public class ProfileViewController {
         });
         textField.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
-                if (validateTextField(textField)) {
-                    makeUneditable(textField);
-                    changeMethod.run();
-                    updateProfileLabels(); // Update labels immediately after changing
-                }
+                makeUneditable(textField);
+                changeMethod.run();
+                updateProfileLabels(); // Update labels immediately after changing
             }
         });
-    }
-
-    private boolean validateTextField(TextField textField) {
-        if (textField == emailTextField && !textField.getText().contains("@")) {
-            displayError(textField, "Please enter a valid email.");
-            return false;
-        }
-        return true;
     }
 
     private void setupEditableDatePicker(DatePicker datePicker, Button changeButton, Runnable changeMethod) {
@@ -189,21 +197,11 @@ public class ProfileViewController {
 
         datePicker.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
-                if (validateDatePicker(datePicker)) {
-                    datePicker.setEditable(false);
-                    changeMethod.run();
-                    updateProfileLabels(); // Update labels immediately after changing
-                }
+                makeUneditable(datePicker);
+                changeMethod.run();
+                updateProfileLabels(); // Update labels immediately after changing
             }
         });
-    }
-
-    private boolean validateDatePicker(DatePicker datePicker) {
-        if (datePicker.getValue() == null) {
-            displayError(datePicker, "Expiration date cannot be empty.");
-            return false;
-        }
-        return true;
     }
 
     @FXML
@@ -214,6 +212,10 @@ public class ProfileViewController {
 
     private void makeUneditable(TextField textField) {
         textField.setEditable(false);
+    }
+
+    private void makeUneditable(DatePicker datePicker) {
+        datePicker.setEditable(false);
     }
 
     @FXML
@@ -233,158 +235,6 @@ public class ProfileViewController {
         }
     }
 
-    @FXML
-    private void changeEmail() {
-        String newEmail = emailTextField.getText();
-        if (newEmail.trim().isEmpty() || !newEmail.contains("@")) {
-            displayError(emailTextField, "Please enter a valid email.");
-            return;
-        }
-
-        if (currentUser != null) {
-            currentUser.setEmail(newEmail);
-            UserDataHandler.saveUserList();
-            clearError(emailTextField);
-            System.out.println("Email changed to: " + newEmail);
-        }
-    }
-
-    @FXML
-    private void changePhone() {
-        String newPhone = phoneTextField.getText();
-        if (newPhone.trim().isEmpty()) {
-            displayError(phoneTextField, "Phone number cannot be empty.");
-            return;
-        }
-
-        if (currentUser != null) {
-            currentUser.setPhone(newPhone);
-            UserDataHandler.saveUserList();
-            clearError(phoneTextField);
-        }
-    }
-
-    @FXML
-    private void changeAddress() {
-        String newAddress = addressTextField.getText();
-        if (newAddress.trim().isEmpty()) {
-            displayError(addressTextField, "Address cannot be empty.");
-            return;
-        }
-
-        if (currentUser != null) {
-            currentUser.setAddress(newAddress);
-            UserDataHandler.saveUserList();
-            clearError(addressTextField);
-        }
-    }
-
-    @FXML
-    private void changePostalCode() {
-        String newPostalCode = postalCodeTextField.getText();
-        if (newPostalCode.trim().isEmpty()) {
-            displayError(postalCodeTextField, "Postal code cannot be empty.");
-            return;
-        }
-
-        if (currentUser != null) {
-            currentUser.setPostalCode(newPostalCode);
-            UserDataHandler.saveUserList();
-            clearError(postalCodeTextField);
-        }
-    }
-
-    @FXML
-    private void changeCity() {
-        String newCity = cityTextField.getText();
-        if (newCity.trim().isEmpty()) {
-            displayError(cityTextField, "City cannot be empty.");
-            return;
-        }
-
-        if (currentUser != null) {
-            currentUser.setCity(newCity);
-            UserDataHandler.saveUserList();
-            clearError(cityTextField);
-        }
-    }
-
-    @FXML
-    private void changeApartmentNumber() {
-        String newApartmentNumber = apartmentNumberTextField.getText();
-        if (newApartmentNumber.trim().isEmpty()) {
-            displayError(apartmentNumberTextField, "Apartment number cannot be empty.");
-            return;
-        }
-
-        if (currentUser != null) {
-            currentUser.setApartmentNumber(newApartmentNumber);
-            UserDataHandler.saveUserList();
-            clearError(apartmentNumberTextField);
-        }
-    }
-
-    @FXML
-    private void changeCardHolder() {
-        String newCardHolder = cardHolderTextField.getText();
-        if (newCardHolder.trim().isEmpty()) {
-            displayError(cardHolderTextField, "Card holder name cannot be empty.");
-            return;
-        }
-
-        if (currentUser != null) {
-            currentUser.setHoldersName(newCardHolder);
-            UserDataHandler.saveUserList();
-            clearError(cardHolderTextField);
-        }
-    }
-
-    @FXML
-    private void changeCardNumber() {
-        String newCardNumber = cardNumberTextField.getText();
-        if (newCardNumber.trim().isEmpty()) {
-            displayError(cardNumberTextField, "Card number cannot be empty.");
-            return;
-        }
-
-        if (currentUser != null) {
-            currentUser.setCardNumber(newCardNumber);
-            UserDataHandler.saveUserList();
-            clearError(cardNumberTextField);
-        }
-    }
-
-    @FXML
-    private void changeSecurityCode() {
-        String newSecurityCodeString = securityCodeTextField.getText();
-        if (newSecurityCodeString.trim().isEmpty() || !newSecurityCodeString.matches("\\d+")) {
-            displayError(securityCodeTextField, "Security code must be numeric.");
-            return;
-        }
-
-        int newSecurityCode = Integer.parseInt(newSecurityCodeString);
-        if (currentUser != null) {
-            currentUser.setSecurityCode(newSecurityCode);
-            UserDataHandler.saveUserList();
-            clearError(securityCodeTextField);
-        }
-    }
-
-    @FXML
-    private void changeExpirationDate() {
-        LocalDate newExpirationDate = expirationDatePicker.getValue();
-        if (newExpirationDate == null) {
-            displayError(expirationDatePicker, "Expiration date cannot be empty.");
-            return;
-        }
-
-        if (currentUser != null) {
-            currentUser.setExpirationDate(newExpirationDate);
-            UserDataHandler.saveUserList();
-            clearError(expirationDatePicker);
-        }
-    }
-
     private String[] splitName(String fullName) {
         String[] nameParts = fullName.trim().split("\\s+", 2);
         if (nameParts.length < 2) {
@@ -392,6 +242,73 @@ public class ProfileViewController {
             return new String[]{"", ""};
         }
         return nameParts;
+    }
+
+    @FXML
+    private void changeEmail() {
+        String newEmail = emailTextField.getText();
+        if (currentUser != null) {
+            currentUser.setEmail(newEmail);
+            UserDataHandler.saveUserList();
+        }
+    }
+
+    @FXML
+    private void changePhone() {
+        String newPhone = phoneTextField.getText();
+        if (currentUser != null) {
+            currentUser.setPhone(newPhone);
+            UserDataHandler.saveUserList();
+        }
+    }
+
+    @FXML
+    private void changeAddress() {
+        if (currentUser != null) {
+            currentUser.setAddress(addressTextField.getText());
+            currentUser.setPostalCode(postalCodeTextField.getText());
+            currentUser.setCity(cityTextField.getText());
+            currentUser.setApartmentNumber(apartmentNumberTextField.getText());
+            UserDataHandler.saveUserList();
+        }
+    }
+
+    @FXML
+    private void changeCardHolder() {
+        String newCardHolder = cardHolderTextField.getText();
+        if (currentUser != null) {
+            currentUser.setHoldersName(newCardHolder);
+            UserDataHandler.saveUserList();
+        }
+    }
+
+    @FXML
+    private void changeCardNumber() {
+        String newCardNumber = cardNumberTextField.getText();
+        if (currentUser != null) {
+            currentUser.setCardNumber(newCardNumber);
+            UserDataHandler.saveUserList();
+        }
+    }
+
+    @FXML
+    private void changeSecurityCode() {
+        String newSecurityCodeString = securityCodeTextField.getText();
+        int newSecurityCode = Integer.parseInt(newSecurityCodeString);
+        if (currentUser != null) {
+            currentUser.setSecurityCode(newSecurityCode);
+            UserDataHandler.saveUserList();
+        }
+    }
+
+    @FXML
+    private void changeExpirationDate() {
+        LocalDate newExpirationDate = expirationDatePicker.getValue();
+        if (currentUser != null) {
+            currentUser.setExpirationMonth(newExpirationDate.getMonthValue());
+            currentUser.setExpirationYear(newExpirationDate.getYear());
+            UserDataHandler.saveUserList();
+        }
     }
 
     private void displayError(TextField textField, String message) {

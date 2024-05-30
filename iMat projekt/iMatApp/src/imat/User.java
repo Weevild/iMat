@@ -42,7 +42,6 @@ public class User {
         this.expirationMonth = 0;
         this.expirationYear = 0;
         this.cardNumber = "";
-        this.expirationDate = null;
         this.securityCode = 0;
     }
 

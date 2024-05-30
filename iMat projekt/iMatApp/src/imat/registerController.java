@@ -185,6 +185,12 @@ public class registerController {
         userList.add(newUser);
         saveUserList();
 
+        // Update current user session with the new user
+        UserSession.setCurrentUser(newUser);
+
+        // Print current user for troubleshooting
+        System.out.println("Current user after registration: " + UserSession.getCurrentUser().getFirstName() + " " + UserSession.getCurrentUser().getLastName());
+
         // Clear errors after successful registration
         clearError(NamnText);
         clearError(EfternamnText);

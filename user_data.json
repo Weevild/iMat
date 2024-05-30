@@ -1,1 +1,15 @@
-[]
+[ {
+  "firstName" : "Filip",
+  "lastName" : "Westman",
+  "phone" : "",
+  "email" : "filip@gmail.com",
+  "address" : "Göteborgsvägen 123",
+  "postalCode" : "43132",
+  "city" : "Göteborg",
+  "apartmentNumber" : "",
+  "password" : "123",
+  "holdersName" : "",
+  "expirationMonth" : 6,
+  "expirationYear" : 2024,
+  "cardNumber" : "",
+  "securityCode" : 0} ]

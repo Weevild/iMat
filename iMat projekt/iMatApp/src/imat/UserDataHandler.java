@@ -1,10 +1,12 @@
 package imat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +21,9 @@ public class UserDataHandler {
 
     public static void saveUserList() {
         ObjectMapper mapper = new ObjectMapper();
+        ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter(); // Enable pretty printing
         try {
-            mapper.writeValue(new File(USER_FILE), userList);
+            writer.writeValue(new File(USER_FILE), userList); // Use writer instead of mapper
             System.out.println("User list saved to file.");
         } catch (IOException e) {
             e.printStackTrace();
@@ -30,14 +33,7 @@ public class UserDataHandler {
     public static void loadUserList() {
         ObjectMapper mapper = new ObjectMapper();
         File file = new File(USER_FILE);
-        if (file.exists()) {
-            if (file.length() == 0) {
-                System.out.println("User file is empty. Initializing with an empty list.");
-                userList = new ArrayList<>();
-                saveUserList();
-                return;
-            }
-
+        if (file.exists() && file.length() > 0) { // Check if file exists and is not empty
             try {
                 CollectionType listType = mapper.getTypeFactory().constructCollectionType(ArrayList.class, User.class);
                 userList = mapper.readValue(file, listType);
@@ -46,9 +42,8 @@ public class UserDataHandler {
                 e.printStackTrace();
             }
         } else {
-            // Create the file if it doesn't exist
+            System.out.println("User file not found or is empty. A new file will be created.");
             saveUserList();
-            System.out.println("User file not found. A new file has been created.");
         }
     }
 }
