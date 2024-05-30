@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="1080.0" prefWidth="1920.0" styleClass="root-pane" stylesheets="@shoppingCart_page.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="cartPopup" prefWidth="600.0" styleClass="cart-popup" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" spacing="10.0" styleClass="cart-header">
+               <children>
+                  <Label styleClass="cart-title" text="Varukorg" translateX="-141.0" />
+                  <Button styleClass="close-button">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/images/cross.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </HBox>
+            <ScrollPane fitToWidth="true" styleClass="cart-scroll-pane">
+               <content>
+                  <VBox fx:id="cartItemsContainer" spacing="10.0" styleClass="cart-items-container">
+                     <!-- Repeat this block for each cart item -->
+                     <HBox spacing="10.0" styleClass="cart-item">
+                        <ImageView fx:id="itemImage" fitHeight="70.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/images/Placeholder_view.png" />
+                           </image></ImageView>
+                        <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="250.0" spacing="5.0" styleClass="cart-item-details" translateX="9.0">
+                           <Label fx:id="itemName" prefHeight="23.0" prefWidth="133.0" styleClass="product-label" text="Produktnamn" />
+                           <Label fx:id="itemPrice" text="0 kr">
+                              <font>
+                                 <Font size="20.0" />
+                              </font></Label>
+                        </VBox>
+                        <HBox maxHeight="42.0" prefHeight="30.0" styleClass="quantity-control" translateX="69.0" translateY="6.0">
+                           <Button styleClass="quantity-button" text="-" />
+                           <Label fx:id="itemQuantity" styleClass="quantity-label" text="3" />
+                           <Button styleClass="quantity-button" text="+" />
+                        </HBox>
+                     </HBox>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <VBox styleClass="cart-footer">
+               <Label fx:id="totalLabel" styleClass="total-label" text="Totalt (0 varor)" />
+               <Label fx:id="totalPrice" styleClass="total-price" text="0 kr" />
+               <Button styleClass="checkout-button" text="Gå till kassan" />
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

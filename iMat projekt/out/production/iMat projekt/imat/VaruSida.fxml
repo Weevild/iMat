@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainPane" prefHeight="720.0" prefWidth="1280.0" styleClass="border-pane" stylesheets="@Varusida.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.VaruSidaController">
+   <top>
+      <AnchorPane fx:id="header" prefHeight="100.0" prefWidth="1280.0" styleClass="header" stylesheets="@Varusida.css">
+         <children>
+            <Button fx:id="homeButton" layoutX="20.0" layoutY="15.0" styleClass="home-button">
+               <graphic>
+                  <ImageView fitHeight="74.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/iMat_logo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <TextField fx:id="searchBar" layoutX="280.0" layoutY="33.0" promptText="Sök" styleClass="text-field-search" />
+            <Button fx:id="searchButton" layoutX="613.0" layoutY="33.0" styleClass="search-button">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/icons8-search-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="cartButton" contentDisplay="TOP" layoutX="1050.0" layoutY="13.0" onAction="#handleOpenCart" styleClass="user-shopping-icons" text="Varukorg">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/icons8-shopping-cart-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="profileButton" contentDisplay="TOP" layoutX="1167.0" layoutY="13.0" onAction="#showProfileViewLoggedIn" styleClass="user-shopping-icons" text="Inloggad">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/icons8-user-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <ScrollPane hbarPolicy="NEVER" prefWidth="197.0">
+         <content>
+            <VBox fx:id="categoryBox" prefWidth="200.0" styleClass="category-box">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="181.0" styleClass="category-title" text="Kategorier" />
+                  <Button fx:id="buttonVegetables" styleClass="category-button" text="Grönsaker" />
+                  <Button fx:id="buttonRootVegetable" styleClass="category-button" text="Rotfrukter" />
+                  <Button fx:id="buttonFruits" styleClass="category-button" text="Frukt" />
+                  <Button fx:id="buttonBerry" styleClass="category-button" text="Bär" />
+                  <Button fx:id="buttonCitrusFruit" styleClass="category-button" text="Citrusfrukter" />
+                  <Button fx:id="buttonExoticFruit" styleClass="category-button" text="Exotiska frukter" />
+                  <Button fx:id="buttonMelons" styleClass="category-button" text="Meloner" />
+                  <Button fx:id="buttonMeat" styleClass="category-button" text="Kött" />
+                  <Button fx:id="buttonFish" styleClass="category-button" text="Fisk" />
+                  <Button fx:id="buttonDairies" styleClass="category-button" text="Mejeri" />
+                  <Button fx:id="buttonNutsAndSeeds" styleClass="category-button" text="Nötter och frön" />
+                  <Button fx:id="buttonBasics" styleClass="category-button" text="Basvaror" />
+                  <Button fx:id="buttonPasta" styleClass="category-button" text="Pasta" />
+                  <Button fx:id="buttonPotatoRice" styleClass="category-button" text="Potatis och ris" />
+                  <Button fx:id="buttonBread" styleClass="category-button" text="Bröd" />
+                  <Button fx:id="buttonSnacks" styleClass="category-button" text="Sötsaker" />
+                  <Button fx:id="buttonSpices" styleClass="category-button" text="Kryddor" />
+                  <Button fx:id="buttonHotDrinks" styleClass="category-button" text="Varma drycker" />
+                  <Button fx:id="buttonColdDrinks" styleClass="category-button" text="Kalla drycker" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </left>
+   <center>
+      <ScrollPane fx:id="productScrollPane" fitToHeight="true" fitToWidth="true">
+         <content>
+            <HBox alignment="CENTER">
+               <children>
+                  <GridPane fx:id="productGrid" hgap="10" styleClass="product-grid" vgap="10">
+                     <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </HBox>
+         </content>
+      </ScrollPane>
+   </center>
+   <children>
+      <AnchorPane fx:id="cartPane" style="-fx-background-color: rgba(0, 0, 0, 0.5);" visible="false">
+      </AnchorPane>
+   </children>
+</BorderPane>

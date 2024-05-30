@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@IMatCheckout.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatCheckoutController">
+   <children>
+      <AnchorPane fx:id="Checkout2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: WHITE;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98d2eb" height="100.0" stroke="#c1bbeb" strokeType="INSIDE" styleClass="checkoutHeader" width="1280.0" />
+                  <Text layoutX="460.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout" textAlignment="CENTER" wrappingWidth="326.0">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="180.0" style="-fx-background-color: #1890ff;" text="Tillbaka till startsidan" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button layoutX="500.0" layoutY="610.0" mnemonicParsing="false" onAction="#openCheckOut3" prefHeight="86.0" prefWidth="260.0" style="-fx-background-color: #1890ff;" text="Fortsätt till Betalning" textFill="#fffefe">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d2d3d3" height="90.0" layoutX="656.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Circle fill="#b1bec999" layoutX="830.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="413.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="847.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d2d3d3" height="90.0" layoutX="855.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="90.0" layoutX="457.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aed9f8" height="90.0" layoutX="255.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Circle fill="#b1bec999" layoutX="813.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="631.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="648.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="430.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="614.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="447.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Text layoutX="300.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="505.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leverans">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="700.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalning">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="910.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bekräfta">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="40.0" layoutY="550.0" mnemonicParsing="false" onAction="#openCheckOut1" prefHeight="100.0" prefWidth="180.0" style="-fx-background-color: #1890ff;" text="Tillbaka till Varukorg" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Accordion layoutX="519.0" layoutY="402.0" prefHeight="128.0" prefWidth="242.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" style="-fx-background-color: WHITE;">
+                    <panes>
+                      <TitledPane animated="false" style="-fx-background-color: #0000FF;" text="Måndag            2024-05-27">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="M8" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#SetTimeMonday8" style="-fx-background-color: #1890ff;" text="8:00" textFill="WHITE">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button layoutX="101.0" layoutY="14.0" mnemonicParsing="false" onAction="#SetTimeMonday12" style="-fx-background-color: #1890ff;" text="12:00" textFill="WHITE">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button layoutX="181.0" layoutY="14.0" mnemonicParsing="false" onAction="#SetTimeMonday16" style="-fx-background-color: #1890ff;" text="16:00" textFill="WHITE">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color blue="1.0" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                      </TitledPane>
+                      <TitledPane animated="false" style="-fx-background-color: #0000FF;" text="Onsdag             2024-05-29">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="240.0">
+                                 <children>
+                                    <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#SetTimeWednesday8" style="-fx-background-color: #1890ff;" text="8:00" textFill="WHITE">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button layoutX="101.0" layoutY="12.0" mnemonicParsing="false" onAction="#SetTimeWednesday12" style="-fx-background-color: #1890ff;" text="12:00" textFill="WHITE">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button layoutX="181.0" layoutY="12.0" mnemonicParsing="false" onAction="#SetTimeWednesday16" style="-fx-background-color: #1890ff;" text="16:00" textFill="WHITE">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                      </TitledPane>
+                      <TitledPane animated="false" prefHeight="137.0" prefWidth="440.0" style="-fx-background-color: #0000FF;" text="Fredag              2024-05-31">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#SetTimeFridayy8" style="-fx-background-color: #1890ff;" text="8:00" textFill="WHITE">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button layoutX="101.0" layoutY="14.0" mnemonicParsing="false" onAction="#SetTimeFriday12" style="-fx-background-color: #1890ff;" text="12:00" textFill="WHITE">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button layoutX="181.0" layoutY="14.0" mnemonicParsing="false" onAction="#SetTimeFriday16" style="-fx-background-color: #1890ff;" text="16:00" textFill="WHITE">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+                  <Text layoutX="388.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj datum och tid för leverans" textAlignment="CENTER">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="260.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/checkmark-xxl.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Checkout3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: WHITE;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98d2eb" height="100.0" stroke="#c1bbeb" strokeType="INSIDE" styleClass="checkoutHeader" width="1280.0" />
+                  <Text layoutX="460.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout" textAlignment="CENTER" wrappingWidth="326.0">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+                  <Button mnemonicParsing="false" onAction="#showHomePageView" prefHeight="100.0" prefWidth="180.0" style="-fx-background-color: #1890ff;" text="Tillbaka till startsidan" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button layoutX="500.0" layoutY="610.0" mnemonicParsing="false" onAction="#openCheckOut4" prefHeight="86.0" prefWidth="260.0" style="-fx-background-color: #1890ff;" text="Fortsätt till Bekräfta" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="90.0" layoutX="656.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Circle fill="#b1bec999" layoutX="413.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="447.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="631.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d2d3d3" height="90.0" layoutX="856.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aed9f8" height="90.0" layoutX="457.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aed9f8" height="90.0" layoutX="255.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Circle fill="#b1bec999" layoutX="847.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="830.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="813.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="648.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="614.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="430.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Text layoutX="300.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="505.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leverans">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="700.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalning">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="910.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bekräfta">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="40.0" layoutY="550.0" mnemonicParsing="false" onAction="#openCheckOut2" prefHeight="100.0" prefWidth="180.0" style="-fx-background-color: #1890ff;" text="Tillbaka till Leverans" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="263.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/checkmark-xxl.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="471.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/checkmark-xxl.png" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="273.0" layoutY="253.0" minWidth="400.0" prefHeight="343.0" prefWidth="714.0" stylesheets="@profile_page.css">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="804.0">
+                           <children>
+                              <Label styleClass="header-title" text="Kortuppgifter">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="cardChangeButton" mnemonicParsing="false" styleClass="changeButton" text="Ändra">
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label styleClass="card-content" text="Namn på kortinnehavaren:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="cardHolderTextField" minWidth="350.0" prefHeight="45.0" prefWidth="400.0">
+                           <VBox.margin>
+                              <Insets left="10.0" right="400.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label styleClass="card-content" text="Kortnummer:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="cardNumberTextField" minWidth="350.0" prefHeight="45.0" prefWidth="400.0">
+                           <VBox.margin>
+                              <Insets left="10.0" right="400.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label styleClass="card-content" text="Säkerhetskod:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="securityCodeTextField" minWidth="350.0" prefHeight="45.0" prefWidth="400.0">
+                           <VBox.margin>
+                              <Insets left="10.0" right="400.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label styleClass="card-content" text="Utgångsdatum (mm/åå):">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <DatePicker fx:id="expirationDatePicker" minWidth="215.0" prefHeight="40.0" prefWidth="215.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                     </children>
+                     <styleClass>
+                        <String fx:value="background-cyan" />
+                        <String fx:value="VBox-curved" />
+                     </styleClass>
+                  </VBox>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Checkout5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: WHITE;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98d2eb" height="100.0" stroke="#c1bbeb" strokeType="INSIDE" styleClass="checkoutHeader" width="1280.0" />
+                  <Text layoutX="460.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout" textAlignment="CENTER" wrappingWidth="326.0">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="500.0" layoutY="610.0" mnemonicParsing="false" onAction="#showHomePageView" prefHeight="86.0" prefWidth="260.0" style="-fx-background-color: #1890ff;" text="Tillbaka till startsidan" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="407.0" layoutX="284.0" layoutY="131.0" stroke="DODGERBLUE" strokeType="INSIDE" strokeWidth="3.0" width="670.0" />
+                  <Text layoutX="513.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order bekräftad">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="336.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/checkmark-xxl.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Checkout4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: WHITE;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98d2eb" height="100.0" stroke="#c1bbeb" strokeType="INSIDE" styleClass="checkoutHeader" width="1280.0" />
+                  <Text layoutX="460.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout" textAlignment="CENTER" wrappingWidth="326.0">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+                  <Button mnemonicParsing="false" onAction="#showHomePageView" prefHeight="100.0" prefWidth="180.0" style="-fx-background-color: #1890ff;" text="Tillbaka till startsidan" textAlignment="CENTER" textFill="#fffefe" wrapText="true">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button layoutX="500.0" layoutY="610.0" mnemonicParsing="false" onAction="#confirmOrder" prefHeight="86.0" prefWidth="260.0" style="-fx-background-color: #1890ff;" text="Bekräfta din order" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aed9f8" height="90.0" layoutX="656.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="90.0" layoutX="855.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aed9f8" height="90.0" layoutX="457.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aed9f8" height="90.0" layoutX="255.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Text layoutX="300.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="505.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leverans">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="700.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalning">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="910.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bekräfta">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="389.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bekräfta att din order stämmer">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="561.0" layoutY="378.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" stroke="DODGERBLUE" strokeType="INSIDE" width="260.0" x="-61.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text layoutX="658.0" layoutY="384.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leveranstid" x="-61.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Text>
+                  <Button layoutX="40.0" layoutY="550.0" mnemonicParsing="false" onAction="#openCheckOut3" prefHeight="100.0" prefWidth="180.0" style="-fx-background-color: #1890ff;" text="Tillbaka till Betalning" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="260.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/checkmark-xxl.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="463.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/checkmark-xxl.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="660.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/checkmark-xxl.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="LeveransTid" layoutX="502.0" layoutY="428.0" prefHeight="35.0" prefWidth="309.0" text="LeveransTid" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Circle fill="#b1bec999" layoutX="413.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+            <Circle fill="#b1bec999" layoutX="430.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+            <Circle fill="#b1bec999" layoutX="447.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+            <Circle fill="#b1bec999" layoutX="614.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+            <Circle fill="#b1bec999" layoutX="631.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+            <Circle fill="#b1bec999" layoutX="648.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+            <Circle fill="#b1bec999" layoutX="813.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+            <Circle fill="#b1bec999" layoutX="830.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+            <Circle fill="#b1bec999" layoutX="847.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Checkout1" prefHeight="720.0" prefWidth="1280.0" stylesheets="@IMatCheckout.css">
+         <children>
+            <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: WHITE;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#98d2eb" height="100.0" stroke="#c1bbeb" strokeType="INSIDE" styleClass="checkoutHeader" width="1280.0" />
+                  <Text layoutX="460.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout" textAlignment="CENTER" wrappingWidth="326.0">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+                  <Button mnemonicParsing="false" onAction="#showHomePageView" prefHeight="100.0" prefWidth="180.0" style="-fx-background-color: #1890ff;" text="Tillbaka till startsidan" textAlignment="CENTER" textFill="#fffefe" wrapText="true">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button layoutX="500.0" layoutY="610.0" mnemonicParsing="false" onAction="#openCheckOut2" prefHeight="86.0" prefWidth="260.0" style="-fx-background-color: #1890ff;" text="Fortsätt till Leverans" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d2d3d3" height="90.0" layoutX="855.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Circle fill="#b1bec999" layoutX="430.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="413.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="447.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d2d3d3" height="90.0" layoutX="656.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d2d3d3" height="90.0" layoutX="457.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="90.0" layoutX="255.0" layoutY="157.0" stroke="#b5b3b3" strokeType="INSIDE" width="150.0" />
+                  <Circle fill="#b1bec999" layoutX="830.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="813.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="847.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="648.0" layoutY="202.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="631.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Circle fill="#b1bec999" layoutX="614.0" layoutY="201.0" radius="8.0" stroke="#978787" strokeType="INSIDE" />
+                  <Text layoutX="300.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="505.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leverans">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="700.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betalning">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="910.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bekräfta">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="444.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inspektera din varukorg" textAlignment="CENTER">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <AnchorPane layoutX="330.0" layoutY="307.0" prefHeight="271.0" prefWidth="456.0">
+                     <children>
+                        <VBox fx:id="cartPopup" prefWidth="600.0" styleClass="cart-popup" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane fitToWidth="true" styleClass="cart-scroll-pane">
+                                 <content>
+                                    <VBox fx:id="cartItemsContainer" spacing="10.0" styleClass="cart-items-container">
+                                       <children>
+                                          <HBox prefHeight="121.0" prefWidth="556.0" spacing="10.0" styleClass="cart-item">
+                                             <children>
+                                                <ImageView fx:id="itemImage" fitHeight="70.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@resources/images/Placeholder_view.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="250.0" spacing="5.0" styleClass="cart-item-details" translateX="9.0">
+                                                   <children>
+                                                      <Label fx:id="itemName" prefHeight="23.0" prefWidth="133.0" styleClass="product-label" text="Produktnamn" />
+                                                      <Label fx:id="itemPrice" text="0 kr">
+                                                         <font>
+                                                            <Font size="20.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <HBox maxHeight="42.0" prefHeight="30.0" styleClass="quantity-control" translateX="69.0" translateY="6.0">
+                                                   <children>
+                                                      <Button styleClass="quantity-button" text="-" />
+                                                      <Label fx:id="itemQuantity" styleClass="quantity-label" text="3" />
+                                                      <Button styleClass="quantity-button" text="+" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                              <VBox prefHeight="62.0" prefWidth="558.0" styleClass="cart-footer">
+                                 <children>
+                                    <Label fx:id="totalLabel" styleClass="total-label" text="Totalt (0 varor)" />
+                                    <Label fx:id="totalPrice" styleClass="total-price" text="0 kr" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

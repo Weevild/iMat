@@ -1,0 +1,245 @@
+.header {
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100px;
+    -fx-background-color: #98D2EB;
+}
+
+.home-button {
+    -fx-background-color: transparent;
+    -fx-pref-width: 157px;
+    -fx-pref-height: 83px;
+}
+
+.home-button:hover {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+
+.home-button .image-view {
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+}
+
+.home-button:hover .image-view {
+    -fx-effect: dropshadow(gaussian, #1890ff, 10, 0.5, 0, 0);
+}
+
+.text-field-search {
+    -fx-pref-width: 333px;
+    -fx-pref-height: 53px;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 0;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 23px;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: rgba(0, 0, 0, 0.691);
+    -fx-font-weight: 400;
+}
+
+.search-button {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 53px;
+    -fx-background-color: #1890ff;
+    -fx-border: none;
+    -fx-cursor: hand;
+}
+
+.search-button:hover {
+    -fx-background-color: #18B8FF;
+}
+
+.user-shopping-icons {
+    -fx-background-color: transparent;
+    -fx-pref-height: 53px;
+    -fx-pref-width: 100px;
+    -fx-font-size: 20px;
+    -fx-font-weight: 400;
+    -fx-text-fill: black;
+    -fx-alignment: center;
+    -fx-padding: 6.7px;
+}
+
+.user-shopping-icons:hover {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.category-box {
+    -fx-background-color: #f9f9f9;
+    -fx-border:2px;
+    -fx-border-color: white;
+
+}
+
+.category-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+
+}
+
+.category-button {
+    -fx-border-color: lightgray;
+    -fx-border-width: 1px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 17px 0px;
+    -fx-pref-width: 215px;
+    -fx-background-color: #f9f9f9;
+    -fx-border: 10px;
+    -fx-border-color: black;
+    -fx-cursor: hand;
+}
+
+.category-button:hover {
+    -fx-background-color: #18B8FF;
+}
+
+.product-grid {
+    -fx-padding: 10;
+}
+
+.product-name {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-font-family:"Roboto"
+}
+
+.product-price {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+}
+
+.buy-button {
+    -fx-background-color: #1890ff;
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+    -fx-padding: 5 0;
+    -fx-background-radius: 20;
+    -fx-pref-width: 200px;
+    -fx-cursor: hand;
+}
+
+.buy-button:hover{
+    -fx-background-color: #18B8FF;
+}
+
+.product-card {
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-padding: 5;
+    -fx-spacing: 2;
+    -fx-alignment: center;
+    -fx-pref-width: 210px;
+    -fx-pref-height: 265px;
+}
+
+.quantity {
+    -fx-font-size: 12;
+    -fx-padding: 3 5;
+    -fx-background-color: #e0e0e0;
+    -fx-background-radius: 5;
+}
+
+.quantity-box {
+    -fx-alignment: center;
+    -fx-spacing: 2;
+    -fx-background-color: transparent;
+    -fx-background-radius: 20;
+}
+
+.quantity-label {
+    -fx-font-size: 14px;
+    -fx-padding: 5 10;
+    -fx-background-color: transparent;
+    -fx-background-radius: 5;
+    -fx-text-alignment: center;
+    -fx-min-width: 30px;
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+}
+
+.adjust-button {
+    -fx-background-color: #1890ff;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-background-radius: 50%;
+    -fx-cursor: hand;
+}
+
+.adjust-button:hover {
+    -fx-background-color: #18B8FF;
+}
+.border-pane{
+}
+
+.user-shopping-icons {
+    -fx-background-color: transparent;
+    -fx-pref-height: 53px;
+    -fx-pref-width: 100px;
+    -fx-font-size: 20px;
+    -fx-font-weight: 400;
+    -fx-text-fill: black;
+    -fx-alignment: center;
+    -fx-padding: 6.7px;
+
+}
+
+.user-shopping-icons:hover {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.user-shopping-icons .image-view {
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+}
+
+.user-shopping-icons:hover .image-view {
+    -fx-effect: dropshadow(gaussian, #4F4F4F, 2, 0.5, 0, 0);
+}
+.rounded-borders-boxes {
+    -fx-border-color: black; /* Optional: if you want a border */
+    -fx-border-width: 1; /* Optional: sets the border width */
+    -fx-border-radius: 10;
+    -fx-background-radius: 20;
+    -fx-background-color: transparent;
+}
+
+.box {
+    -fx-border-color: #000000; /* Example border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-radius: 20px; /* Rounded corners if desired */
+
+}
+
+
+.welcome-sign {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+}
+
+.blue-button-text {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+}
+
+.largeLoginButton{
+    -fx-pref-width: 400px;
+    -fx-pref-height: 100px;
+    -fx-background-radius: 20;
+    -fx-background-color: #1890ff;
+    -fx-cursor: hand;
+}
+
+.largeLoginButton:hover{
+    -fx-background-color: #18B8FF;
+}
+

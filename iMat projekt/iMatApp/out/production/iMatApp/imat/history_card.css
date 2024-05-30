@@ -1,0 +1,38 @@
+.order-id{
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-padding: 10 10 0 10;
+}
+
+.order-date{
+    -fx-font-size: 30;
+    -fx-padding: 10 10 10 0;
+}
+
+.header{
+    -fx-background-color: #98D2EB;
+}
+
+.anchorpane-transparent {
+    -fx-background-color: transparent;
+}
+
+
+.VBox-edges{
+    -fx-background-radius: 10; /* This rounds the corners of the VBox */
+    -fx-border-radius: 10; /* This rounds the borders if any */
+    -fx-background-color: white; /* Change this as needed */
+    -fx-border-color: black; /* Optional: if you want a border */
+    -fx-border-width: 2; /* Optional: sets the border width */
+}
+
+.top-corners-curved{
+    -fx-background-radius: 10 10 0 0; /* top-left, top-right, bottom-right, bottom-left */
+    -fx-border-radius: 10 10 0 0;
+
+}
+
+.bottom-corners-curved{
+    -fx-background-radius: 0 0 10 10; /* top-left, top-right, bottom-right, bottom-left */
+    -fx-border-radius: 0 0 10 10;
+}

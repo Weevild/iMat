@@ -1,0 +1,34 @@
+.header{
+    -fx-pref-width: 100%;
+    -fx-pref-height: 150px;
+    -fx-background-color: #98D2EB;
+}
+
+.background-header-button{
+    -fx-background-color: #1890FF;
+    -fx-text-fill: white;
+}
+
+.background-header-button:hover{
+    -fx-background-color: #18B8FF;
+    -fx-cursor: hand;
+}
+
+.home-button{
+    -fx-background-color: transparent;
+    -fx-pref-width: 157px;
+    -fx-pref-height: 83px;
+}
+
+.home-button:hover {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.home-button .image-view {
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+}
+
+.home-button:hover .image-view {
+    -fx-effect: dropshadow(gaussian, #1890ff, 10, 0.5, 0, 0);
+}

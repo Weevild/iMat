@@ -1,0 +1,65 @@
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-padding: 10;
+}
+
+.header-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+}
+.header-format{
+    -fx-font-size: 14px;
+    -fx-padding: 6 0 0 10;
+}
+
+.card-content{
+    -fx-padding: 20 0 0 0;
+}
+
+.VBox-curved{
+    -fx-background-radius: 10; /* This rounds the corners of the VBox */
+    -fx-border-radius: 10; /* This rounds the borders if any */
+    -fx-background-color: white; /* Change this as needed */
+    -fx-border-color: black; /* Optional: if you want a border */
+    -fx-border-width: 1; /* Optional: sets the border width */
+}
+
+.top-corners-curved{
+    -fx-background-radius: 10 10 0 0; /* top-left, top-right, bottom-right, bottom-left */
+    -fx-border-radius: 10 10 0 0;
+
+}
+
+.bottom-corners-curved{
+    -fx-background-radius: 0 0 10 10; /* top-left, top-right, bottom-right, bottom-left */
+    -fx-border-radius: 0 0 10 10;
+}
+
+.background-cyan{
+    -fx-background-color: #98D2EB;
+}
+
+.background-flowpane{
+    -fx-background-color: #45454531;
+}
+
+.background-transparent{
+    -fx-background-color: transparent;
+}
+
+.changeButton{
+    -fx-background-color: #1890FF;
+    -fx-text-fill: white;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 18px;
+}
+
+.changeButton:hover{
+    -fx-background-color: #18B8FF;
+    -fx-cursor: hand;
+}

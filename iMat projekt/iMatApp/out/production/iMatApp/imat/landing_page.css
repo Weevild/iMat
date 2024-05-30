@@ -1,0 +1,57 @@
+.rounded-borders-boxes {
+    -fx-border-color: black; /* Optional: if you want a border */
+    -fx-border-width: 1; /* Optional: sets the border width */
+    -fx-border-radius: 10;
+    -fx-background-radius: 20;
+    -fx-background-color: transparent;
+}
+
+.box {
+    -fx-border-color: #000000; /* Example border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-radius: 20px; /* Rounded corners if desired */
+}
+
+.blue-box {
+    -fx-background-color: #98D2EB; /* Example color */
+    -fx-border-radius: 20px; /* Rounded corners if desired */
+    -fx-background-radius: 20;
+}
+
+.button {
+    -fx-background-color: #1890FF; /* Adjust button color */
+    -fx-text-fill: #ffffff; /* Text color */
+    -fx-margin: 10px; /* Space between buttons */
+}
+
+.welcome-sign {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+}
+
+.blue-button-text {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+}
+
+.category-text {
+    -fx-font-size: 24px;
+    -fx-padding: 20 0 0 30;
+}
+
+.category-box {
+    -fx-border-color: black; /* Sets the border color */
+    -fx-border-width: 0 0 2px 0; /* Top Right Bottom Left */
+    -fx-border-style: solid; /* Optional: sets the border style */
+}
+
+.largeLoginButton{
+    -fx-pref-width: 400px;
+    -fx-pref-height: 100px;
+    -fx-background-radius: 20;
+    -fx-background-color: #1890ff;
+}
+
+.largeLoginButton:hover{
+    -fx-background-color: #18B8FF;
+}

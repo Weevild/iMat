@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="480.0" prefWidth="854.0" stylesheets="@iMat_popout.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="leftVBox" alignment="CENTER" prefHeight="206.0" prefWidth="412.0" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <ImageView fx:id="productImage" fitHeight="205.0" fitWidth="266.0">
+               <image>
+                  <Image url="@../../../../../Desktop/Placeholder_view_vector.svg.png" />
+               </image></ImageView>
+         </children>
+      </VBox>
+      <VBox fx:id="rightVBox" layoutX="447.0" prefWidth="387.0" spacing="3.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label styleClass="product-name" text="Produktnamn" />
+            <Label text="Antal/x Kg/x L" />
+            <Label styleClass="product-price" text="Pris/st" />
+            <HBox maxWidth="83.0" prefHeight="24.0" prefWidth="84.0" spacing="10.0" styleClass="hbox" stylesheets="@IMat_popout.css">
+               <children>
+                  <Button text="-" />
+                  <Label styleClass="quantity" stylesheets="@IMat_popout.css" text="0" />
+                  <Button text="+" />
+               </children>
+            </HBox>
+            <TitledPane styleClass="titled-pane" text="Produktfakta">
+               <content>
+                  <VBox>
+                     <children>
+                        <Label text="Innehållstext här" />
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane expanded="false" styleClass="titled-pane" text="Näringsinnehåll">
+               <content>
+                  <VBox>
+                     <children>
+                        <Label text="Innehållstext här" />
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+         </children>
+      </VBox>
+      <Label layoutX="153.0" layoutY="277.0" styleClass="liknande-produkter" stylesheets="@IMat_popout.css" text="Liknande produkter" />
+      <HBox fx:id="similarProductsHBox" alignment="CENTER" layoutX="5.0" layoutY="308.0" prefHeight="150.0" prefWidth="844.0" spacing="10.0">
+         <children>
+            <VBox fx:id="productCard1" styleClass="product-card">
+               <children>
+                  <ImageView fx:id="productImage1" fitHeight="48.0" fitWidth="48.0">
+                     <image>
+                        <Image url="@../../../../../Desktop/Placeholder_view_vector.svg.png" />
+                     </image></ImageView>
+                  <Label styleClass="product-name-card" text="Produktnamn" />
+                  <Label styleClass="quantity" stylesheets="@IMat_popout.css" text="20 st" />
+                  <Label styleClass="product-price" text="Pris/st" />
+                  <Button styleClass="buy-button" text="Köp" />
+               </children>
+            </VBox>
+            <VBox fx:id="productCard2" styleClass="product-card">
+               <children>
+                  <ImageView fx:id="productImage2" fitHeight="48.0" fitWidth="48.0">
+                     <image>
+                        <Image url="@../../../../../Desktop/Placeholder_view_vector.svg.png" />
+                     </image></ImageView>
+                  <Label styleClass="product-name-card" text="Produktnamn" />
+                  <Label styleClass="quantity" stylesheets="@IMat_popout.css" text="20 st" />
+                  <Label styleClass="product-price" text="Pris/st" />
+                  <Button styleClass="buy-button" text="Köp" />
+               </children>
+            </VBox>
+            <VBox fx:id="productCard3" styleClass="product-card">
+               <children>
+                  <ImageView fx:id="productImage3" fitHeight="48.0" fitWidth="48.0">
+                     <image>
+                        <Image url="@../../../../../Desktop/Placeholder_view_vector.svg.png" />
+                     </image></ImageView>
+                  <Label styleClass="product-name-card" text="Produktnamn" />
+                  <Label styleClass="quantity" stylesheets="@IMat_popout.css" text="20 st" />
+                  <Label styleClass="product-price" text="Pris/st" />
+                  <Button styleClass="buy-button" text="Köp" />
+               </children>
+            </VBox>
+            <VBox fx:id="productCard4" styleClass="product-card">
+               <children>
+                  <ImageView fx:id="productImage4" fitHeight="48.0" fitWidth="48.0">
+                     <image>
+                        <Image url="@../../../../../Desktop/Placeholder_view_vector.svg.png" />
+                     </image></ImageView>
+                  <Label styleClass="product-name-card" text="Produktnamn" />
+                  <Label styleClass="quantity" stylesheets="@IMat_popout.css" text="20 st" />
+                  <Label styleClass="product-price" text="Pris/st" />
+                  <Button styleClass="buy-button" text="Köp" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

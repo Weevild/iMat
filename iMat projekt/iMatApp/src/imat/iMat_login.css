@@ -1,0 +1,98 @@
+.valkommen{
+     -fx-font-size: 60px;
+     -fx-font-family: "Roboto";
+     -fx-font-weight: bold;
+     -fx-pref-width:350px;
+}
+
+.eller{
+     -fx-font-size: 18px;
+     -fx-font-family: "Roboto";
+     -fx-text-fill: #1890ff;
+}
+
+.kom-ihag-mig{
+     -fx-font-size: 18px;
+     -fx-font-family: "Roboto";
+     -fx-text-fill: black;
+     -fx-font-weight: 400;
+}
+
+.input-fields{
+     -fx-background-color: transparent;
+     -fx-border-color:  #1890ff;
+     -fx-border-width: 0px 0px 2px 0px;
+     -fx-font-size: 16px;
+     -fx-pref-width: 300px;
+     -fx-prompt-text-fill: rgba(0, 0, 0, 0.687);
+     -fx-padding: 0;
+
+}
+
+.login-button {
+     -fx-background-color: #1890ff;
+     -fx-text-fill: white;
+     -fx-border: none;
+     -fx-outline: none;
+     -fx-padding: 10px 20px;
+     -fx-border-radius: 40px;
+     -fx-pref-height: 35px;
+     -fx-pref-width: 320px;
+     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+     -fx-cursor: pointer;
+     -fx-font-family: "Roboto";
+     -fx-font-weight: bold;
+     -fx-font-size: 18px;
+     -fx-margin: 20px 0 15px;
+
+ }
+
+ .login-button:hover{
+    -fx-background-color: #18B8FF;
+    -fx-cursor: hand;
+ }
+
+ .register-button {
+     -fx-background-color: black;
+     -fx-text-fill: white;
+     -fx-border: none;
+     -fx-outline: none;
+     -fx-padding: 10px 20px;
+     -fx-border-radius: 40px;
+     -fx-pref-height: 35px;
+     -fx-pref-width: 320px;
+     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+     -fx-cursor: pointer;
+     -fx-font-family: "Roboto";
+     -fx-font-weight: bold;
+     -fx-font-size: 18px;
+     -fx-margin: 20px 0 15px;
+
+ }
+
+ .register-button:hover{
+    -fx-background-color: #4F4F4F;
+    -fx-cursor: hand;
+ }
+ 
+.exit-button {
+    -fx-background-color: transparent;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+    -fx-cursor: hand;
+}
+
+.exit-button:hover {
+    -fx-background-color: #4F4F4F;
+}
+
+.exit-button .image-view {
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+}
+
+.exit-button:hover .image-view {
+    -fx-effect: dropshadow(gaussian, #4F4F4F, 2, 0.5, 0, 0);
+}
+
+
+

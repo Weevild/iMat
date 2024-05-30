@@ -1,0 +1,156 @@
+.header {
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100px;
+    -fx-background-color: #98D2EB;
+}
+
+.home-button{
+    -fx-background-color: transparent;
+    -fx-pref-width: 157px;
+    -fx-pref-height: 83px;
+}
+
+.home-button:hover {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.home-button .image-view {
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+}
+
+.home-button:hover .image-view {
+    -fx-effect: dropshadow(gaussian, #1890ff, 10, 0.5, 0, 0);
+}
+
+.text-field-search {
+    -fx-pref-width: 333px;
+    -fx-pref-height: 53px;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 0;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 23px;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: rgba(0, 0, 0, 0.691);
+    -fx-font-weight: 400;
+}
+
+.search-button {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 53px;
+    -fx-background-color: #1890ff;
+    -fx-border: none;
+    -fx-cursor: hand;
+}
+
+.search-button:hover{
+    -fx-background-color: #18B8FF;
+}
+
+
+.user-shopping-icons {
+    -fx-background-color: transparent;
+    -fx-pref-height: 53px;
+    -fx-pref-width: 100px;
+    -fx-font-size: 20px;
+    -fx-font-weight: 400;
+    -fx-text-fill: black;
+    -fx-alignment: center;
+    -fx-padding: 6.7px;
+
+}
+
+.user-shopping-icons:hover {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.user-shopping-icons .image-view {
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+}
+
+.user-shopping-icons:hover .image-view {
+    -fx-effect: dropshadow(gaussian, #4F4F4F, 2, 0.5, 0, 0);
+}
+
+.anchorpane-register {
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100%;
+}
+
+.register-buttons-wizard {
+    -fx-background-color: lightgrey;
+    -fx-pref-width: 146.7px;
+    -fx-pref-height: 66.7px;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: black;
+    -fx-font-size: 16.7px;
+}
+
+.fortsatt-handla-button {
+    -fx-background-color: #1890ff;
+    -fx-pref-width: 146.7px;
+    -fx-pref-height: 66.7px;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+
+}
+
+.fortsatt-handla-button:hover {
+    -fx-background-color: #18B8FF;
+    -fx-cursor: hand;
+}
+
+.rectangle-progress {
+    -fx-background-color: #a6a6a6;
+    -fx-pref-width: 1280px;
+    -fx-pref-height: 53px;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 20px;
+}
+
+.obligatoriska {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 26.7px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+
+.uppgifter-rubrik {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 20px;
+    -fx-text-fill: black;
+    -fx-font-weight: 700;
+}
+
+.uppgifter-textfield {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16.7px;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 0;
+    -fx-pref-width: 400px;
+}
+
+.nav-buttons {
+    -fx-background-color: #1890ff;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 66.7px;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 16.7px;
+    -fx-cursor: hand;
+}
+
+.nav-buttons:hover {
+    -fx-background-color: #18B8FF;
+}
+
+.invalid {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+}

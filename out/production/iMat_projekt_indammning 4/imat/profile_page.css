@@ -1,0 +1,132 @@
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-padding: 10;
+}
+
+.header-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+}
+.header-format{
+    -fx-font-size: 14px;
+    -fx-padding: 6 0 0 10;
+}
+.header {
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100px;
+    -fx-background-color: #98D2EB;
+}
+
+.home-button {
+    -fx-background-color: transparent;
+    -fx-pref-width: 157px;
+    -fx-pref-height: 83px;
+}
+
+.home-button:hover {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+
+.home-button .image-view {
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+}
+
+.home-button:hover .image-view {
+    -fx-effect: dropshadow(gaussian, #1890ff, 10, 0.5, 0, 0);
+}
+
+.text-field-search {
+    -fx-pref-width: 333px;
+    -fx-pref-height: 53px;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 0;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 23px;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: rgba(0, 0, 0, 0.691);
+    -fx-font-weight: 400;
+}
+
+.search-button {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 53px;
+    -fx-background-color: #1890ff;
+    -fx-border: none;
+    -fx-cursor: hand;
+}
+
+.search-button:hover {
+    -fx-background-color: #18B8FF;
+}
+
+.user-shopping-icons {
+    -fx-background-color: transparent;
+    -fx-pref-height: 53px;
+    -fx-pref-width: 100px;
+    -fx-font-size: 20px;
+    -fx-font-weight: 400;
+    -fx-text-fill: black;
+    -fx-alignment: center;
+    -fx-padding: 6.7px;
+}
+
+.user-shopping-icons:hover {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.card-content{
+    -fx-padding: 20 0 0 0;
+}
+
+.VBox-curved{
+    -fx-background-radius: 10; /* This rounds the corners of the VBox */
+    -fx-border-radius: 10; /* This rounds the borders if any */
+    -fx-background-color: white; /* Change this as needed */
+    -fx-border-color: black; /* Optional: if you want a border */
+    -fx-border-width: 1; /* Optional: sets the border width */
+}
+
+.top-corners-curved{
+    -fx-background-radius: 10 10 0 0; /* top-left, top-right, bottom-right, bottom-left */
+    -fx-border-radius: 10 10 0 0;
+
+}
+
+.bottom-corners-curved{
+    -fx-background-radius: 0 0 10 10; /* top-left, top-right, bottom-right, bottom-left */
+    -fx-border-radius: 0 0 10 10;
+}
+
+.background-cyan{
+    -fx-background-color: #98D2EB;
+}
+
+.background-flowpane{
+    -fx-background-color: #45454531;
+}
+
+.background-transparent{
+    -fx-background-color: transparent;
+}
+
+.changeButton{
+    -fx-background-color: #1890FF;
+    -fx-text-fill: white;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 18px;
+}
+
+.changeButton:hover{
+    -fx-background-color: #18B8FF;
+    -fx-cursor: hand;
+}

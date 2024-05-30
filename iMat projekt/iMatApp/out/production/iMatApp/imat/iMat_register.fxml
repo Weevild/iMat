@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+
+<BorderPane fx:id="RegistreringsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.registerController">
+   <top>
+      <AnchorPane fx:id="Header" prefHeight="100.0" prefWidth="1280.0" styleClass="header" stylesheets="@iMat_register.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="EscapeLogo" layoutX="20.0" layoutY="15.0" mnemonicParsing="false" styleClass="home-button">
+               <graphic>
+                  <ImageView fitHeight="74.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/iMat_logo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <TextField fx:id="SearchBar" layoutX="280.0" layoutY="33.0" promptText="Sök" styleClass="text-field-search" stylesheets="@iMat_register.css" />
+            <Button fx:id="SearchButton" layoutX="613.0" layoutY="33.0" mnemonicParsing="false" styleClass="search-button" stylesheets="@iMat_register.css">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/icons8-search-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="VarukorgButton" contentDisplay="TOP" layoutX="1050.0" layoutY="13.0" mnemonicParsing="false" styleClass="user-shopping-icons" stylesheets="@iMat_register.css" text="Varukorg">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/icons8-shopping-cart-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="LoggainButton" contentDisplay="TOP" layoutX="1167.0" layoutY="13.0" mnemonicParsing="false" styleClass="user-shopping-icons" stylesheets="@iMat_register.css" text="Logga in">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/icons8-user-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <StackPane>
+         <children>
+            <AnchorPane fx:id="RegistreringPane1" styleClass="anchorpane-register" stylesheets="@iMat_register.css">
+               <children>
+                  <Button layoutX="305.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #1890ff;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Personuppgifter" />
+                  <Button layoutX="488.0" layoutY="15.0" mnemonicParsing="false" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Address" />
+                  <Button layoutX="671.0" layoutY="15.0" mnemonicParsing="false" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Lösenord" />
+                  <Button layoutX="854.0" layoutY="15.0" mnemonicParsing="false" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Bekräfta" />
+                  <Line endX="66.3" layoutX="421.0" layoutY="51.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <Line endX="66.3" layoutX="604.0" layoutY="52.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <Line endX="66.3" layoutX="787.0" layoutY="52.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <AnchorPane layoutY="100.0" styleClass="rectangle-progress" stylesheets="@iMat_register.css">
+                     <children>
+                        <Label layoutX="167.0" layoutY="17.0" text="Nuvarande steg" textFill="WHITE" />
+                        <Label layoutX="1033.0" layoutY="17.0" text="Steg 1 av 4" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="400.0" layoutY="184.0" styleClass="obligatoriska" stylesheets="@iMat_register.css" text="Rubriker markerade med * är obligatoriska" />
+                  <Label layoutX="434.0" layoutY="243.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="Förnamn" />
+                  <TextField fx:id="NamnText" layoutX="434.0" layoutY="272.0" promptText="Förnamn" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Label layoutX="434.0" layoutY="318.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="Efternamn" />
+                  <TextField fx:id="EfternamnText" layoutX="434.0" layoutY="347.0" promptText="Efternamn" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Label layoutX="435.0" layoutY="394.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="Telefon" />
+                  <TextField fx:id="TelefonText" layoutX="435.0" layoutY="423.0" promptText="Telefonnummer (ex. 0701234567)" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Label layoutX="435.0" layoutY="470.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="E-mail *" />
+                  <TextField fx:id="EmailText" layoutX="435.0" layoutY="499.0" promptText="E-postadress *" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Button fx:id="NastaStegButton1" contentDisplay="RIGHT" layoutX="996.0" layoutY="490.0" mnemonicParsing="false" styleClass="nav-buttons" stylesheets="@iMat_register.css" text="Nästa steg">
+                     <graphic>
+                        <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" translateX="13.3">
+                           <image>
+                              <Image url="@resources/icons8-right-arrow-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="EscapeButtonReg1" contentDisplay="RIGHT" layoutX="34.0" layoutY="15.0" mnemonicParsing="false" styleClass="fortsatt-handla-button" stylesheets="@iMat_register.css" text="Fortsätt handla" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icons8-return-arrow-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="RegistreringPane2" styleClass="anchorpane-register" stylesheets="@iMat_register.css" visible="false">
+               <children>
+                  <Button layoutX="305.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #03c600;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Personuppgifter" />
+                  <Button layoutX="488.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #1890ff;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Address" />
+                  <Button layoutX="671.0" layoutY="15.0" mnemonicParsing="false" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Lösenord" />
+                  <Button layoutX="854.0" layoutY="15.0" mnemonicParsing="false" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Bekräfta" />
+                  <Line endX="66.3" layoutX="421.0" layoutY="51.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <Line endX="66.3" layoutX="604.0" layoutY="52.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <Line endX="66.3" layoutX="787.0" layoutY="52.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <AnchorPane layoutY="100.0" styleClass="rectangle-progress" stylesheets="@iMat_register.css">
+                     <children>
+                        <Label layoutX="167.0" layoutY="17.0" text="Nuvarande steg" textFill="WHITE" />
+                        <Label layoutX="1033.0" layoutY="17.0" text="Steg 2 av 4" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="400.0" layoutY="184.0" styleClass="obligatoriska" stylesheets="@iMat_register.css" text="Rubriker markerade med * är obligatoriska" />
+                  <Label layoutX="434.0" layoutY="243.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="Adress *" />
+                  <TextField fx:id="AddressText" layoutX="434.0" layoutY="272.0" promptText="Gatuadress *" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Label layoutX="434.0" layoutY="318.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="Postnummer *" />
+                  <TextField fx:id="PostnummerText" layoutX="434.0" layoutY="347.0" promptText="Postnummer *" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Label layoutX="435.0" layoutY="394.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="Ort *" />
+                  <TextField fx:id="OrtText" layoutX="435.0" layoutY="423.0" promptText="Ort *" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Label layoutX="435.0" layoutY="470.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="Lägenhetsnummer" />
+                  <TextField fx:id="LghnummerText" layoutX="435.0" layoutY="499.0" promptText="Lägenhetsnummer (valfritt)" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Button fx:id="TillbakaButton2" layoutX="85.0" layoutY="490.0" mnemonicParsing="false" styleClass="nav-buttons" stylesheets="@iMat_register.css" text="Tillbaka">
+                     <graphic>
+                        <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" translateX="-13.3">
+                           <image>
+                              <Image url="@resources/icons8-left-arrow-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="NastaStegButton2" contentDisplay="RIGHT" layoutX="996.0" layoutY="490.0" mnemonicParsing="false" styleClass="nav-buttons" stylesheets="@iMat_register.css" text="Nästa steg">
+                     <graphic>
+                        <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" translateX="13.3">
+                           <image>
+                              <Image url="@resources/icons8-right-arrow-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="EscapeButtonReg2" contentDisplay="RIGHT" layoutX="34.0" layoutY="15.0" mnemonicParsing="false" styleClass="fortsatt-handla-button" stylesheets="@iMat_register.css" text="Fortsätt handla" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icons8-return-arrow-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="RegistreringPane3" styleClass="anchorpane-register" stylesheets="@iMat_register.css" visible="false">
+               <children>
+                  <Button layoutX="305.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #03c600;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Personuppgifter" />
+                  <Button layoutX="488.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #03c600;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Address" />
+                  <Button layoutX="671.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #1890ff;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Lösenord" />
+                  <Button layoutX="854.0" layoutY="15.0" mnemonicParsing="false" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Bekräfta" />
+                  <Line endX="66.3" layoutX="421.0" layoutY="51.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <Line endX="66.3" layoutX="604.0" layoutY="52.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <Line endX="66.3" layoutX="787.0" layoutY="52.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <AnchorPane layoutY="100.0" styleClass="rectangle-progress" stylesheets="@iMat_register.css">
+                     <children>
+                        <Label layoutX="167.0" layoutY="17.0" text="Nuvarande steg" textFill="WHITE" />
+                        <Label layoutX="1033.0" layoutY="17.0" text="Steg 3 av 4" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="400.0" layoutY="184.0" styleClass="obligatoriska" stylesheets="@iMat_register.css" text="Rubriker markerade med * är obligatoriska" />
+                  <Label layoutX="434.0" layoutY="243.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="Lösenord *" />
+                  <TextField fx:id="LosenordText" layoutX="434.0" layoutY="272.0" promptText="Lösenord *" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Label layoutX="434.0" layoutY="318.0" styleClass="uppgifter-rubrik" stylesheets="@iMat_register.css" text="Bekräfta lösenord *" />
+                  <TextField fx:id="ConfirmLosenordText" layoutX="434.0" layoutY="347.0" promptText="Bekräfta lösenord *" styleClass="uppgifter-textfield" stylesheets="@iMat_register.css" />
+                  <Button fx:id="TillbakaButton3" layoutX="85.0" layoutY="490.0" mnemonicParsing="false" styleClass="nav-buttons" stylesheets="@iMat_register.css" text="Tillbaka">
+                     <graphic>
+                        <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" translateX="-13.3">
+                           <image>
+                              <Image url="@resources/icons8-left-arrow-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="NastaStegButton3" contentDisplay="RIGHT" layoutX="996.0" layoutY="490.0" mnemonicParsing="false" styleClass="nav-buttons" stylesheets="@iMat_register.css" text="Nästa steg">
+                     <graphic>
+                        <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" translateX="13.3">
+                           <image>
+                              <Image url="@resources/icons8-right-arrow-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="EscapeButtonReg3" contentDisplay="RIGHT" layoutX="34.0" layoutY="15.0" mnemonicParsing="false" styleClass="fortsatt-handla-button" stylesheets="@iMat_register.css" text="Fortsätt handla" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icons8-return-arrow-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="RegistreringPane4" styleClass="anchorpane-register" stylesheets="@iMat_register.css" visible="false">
+               <children>
+                  <Button layoutX="305.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #03c600;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Personuppgifter" />
+                  <Button layoutX="488.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #03c600;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Address" />
+                  <Button layoutX="671.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #03c600;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Lösenord" />
+                  <Button layoutX="854.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #1890ff;" styleClass="register-buttons-wizard" stylesheets="@iMat_register.css" text="Bekräfta" />
+                  <Line endX="66.3" layoutX="421.0" layoutY="51.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <Line endX="66.3" layoutX="604.0" layoutY="52.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <Line endX="66.3" layoutX="787.0" layoutY="52.0" startX="31.3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                  <AnchorPane layoutY="100.0" styleClass="rectangle-progress" stylesheets="@iMat_register.css">
+                     <children>
+                        <Label layoutX="167.0" layoutY="17.0" text="Nuvarande steg" textFill="WHITE" />
+                        <Label layoutX="1033.0" layoutY="17.0" text="Steg 4 av 4" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="512.0" layoutY="431.0" styleClass="obligatoriska" stylesheets="@iMat_register.css" text="Ditt konto har skapats!" />
+                  <Button fx:id="TillProfilButton" layoutX="218.0" layoutY="490.0" mnemonicParsing="false" styleClass="nav-buttons" stylesheets="@iMat_register.css" text="Gå till din profil" />
+                  <Button fx:id="TillStartsidanButton" contentDisplay="RIGHT" layoutX="863.0" layoutY="490.0" mnemonicParsing="false" styleClass="nav-buttons" stylesheets="@iMat_register.css" text="Till startsidan" />
+                  <Button fx:id="EscapeButtonReg4" contentDisplay="RIGHT" layoutX="34.0" layoutY="15.0" mnemonicParsing="false" styleClass="fortsatt-handla-button" stylesheets="@iMat_register.css" text="Fortsätt handla" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icons8-return-arrow-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="538.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/icons8-check-100.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
