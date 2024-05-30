@@ -8,8 +8,10 @@
   "city" : "Göteborg",
   "apartmentNumber" : "",
   "password" : "123",
-  "holdersName" : "",
-  "expirationMonth" : 6,
-  "expirationYear" : 2024,
-  "cardNumber" : "",
-  "securityCode" : 0} ]
+  "holdersName" : "Filip Westman",
+  "expirationMonth" : 7,
+  "expirationYear" : 2026,
+  "cardNumber" : "1234 5678 9123 4567",
+  "securityCode" : 123,
+  "expirationDate" : null
+} ]

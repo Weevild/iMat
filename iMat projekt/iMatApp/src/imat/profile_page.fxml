@@ -84,7 +84,7 @@
                                                          <Insets left="10.0" />
                                                       </padding>
                                                    </Label>
-                                                   <Label fx:id="currentNameLabel" styleClass="header-format" text="(förnamn + efternamn)" />
+                                                   <Label fx:id="currentNameLabel" styleClass="header-format" text="(Förnamn + Efternamn)" />
                                                    <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                                                    <Button fx:id="nameChangeButton" mnemonicParsing="false" onAction="#changeName" styleClass="changeButton" text="Ändra">
                                                       <HBox.margin>
@@ -121,7 +121,7 @@
                                                          <Insets left="10.0" />
                                                       </padding>
                                                    </Label>
-                                                   <Label fx:id="currentPhoneLabel" styleClass="header-format" text="(utan landskod +46)" />
+                                                   <Label fx:id="currentPhoneLabel" styleClass="header-format" text="(Utan landskod +46)" />
                                                    <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                                                    <Button fx:id="phoneChangeButton" mnemonicParsing="false" onAction="#changePhone" styleClass="changeButton" text="Ändra">
                                                       <HBox.margin>
@@ -195,7 +195,7 @@
                                                          <Insets left="10.0" />
                                                       </padding>
                                                    </Label>
-                                                   <Label fx:id="currentAddressLabel" styleClass="header-format" text="(Chalmers tvärgata 1)" />
+                                                   <Label fx:id="currentAddressLabel" styleClass="header-format" text="(Adress + Postnummer + Stad + LghNr)" />
                                                    <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                                                    <Button fx:id="addressChangeButton" mnemonicParsing="false" onAction="#changeAddress" styleClass="changeButton" text="Ändra">
                                                       <HBox.margin>
@@ -302,7 +302,7 @@
                                           <Insets left="10.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <TextField fx:id="cardHolderTextField" minWidth="350.0" prefHeight="45.0" prefWidth="400.0">
+                                    <TextField fx:id="cardHolderTextField" minWidth="350.0" prefHeight="45.0" prefWidth="400.0" promptText="Skriv in namnet på kortet här...">
                                        <VBox.margin>
                                           <Insets left="10.0" right="400.0" />
                                        </VBox.margin>
@@ -315,7 +315,7 @@
                                           <Insets left="10.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <TextField fx:id="cardNumberTextField" minWidth="350.0" prefHeight="45.0" prefWidth="400.0">
+                                    <TextField fx:id="cardNumberTextField" minWidth="350.0" prefHeight="45.0" prefWidth="400.0" promptText="Skriv in kortnummer här...">
                                        <VBox.margin>
                                           <Insets left="10.0" right="400.0" />
                                        </VBox.margin></TextField>
@@ -327,7 +327,7 @@
                                           <Insets left="10.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <TextField fx:id="securityCodeTextField" minWidth="350.0" prefHeight="45.0" prefWidth="400.0">
+                                    <TextField fx:id="securityCodeTextField" minWidth="350.0" prefHeight="45.0" prefWidth="400.0" promptText="Skriv in säkerhetskod här...">
                                        <VBox.margin>
                                           <Insets left="10.0" right="400.0" />
                                        </VBox.margin></TextField>
@@ -339,7 +339,7 @@
                                           <Insets left="10.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <DatePicker fx:id="expirationDatePicker" minWidth="215.0" prefHeight="40.0" prefWidth="215.0">
+                                    <DatePicker fx:id="expirationDatePicker" minWidth="215.0" prefHeight="40.0" prefWidth="215.0" promptText="Välj utgångsdatum här...">
                                        <VBox.margin>
                                           <Insets left="10.0" />
                                        </VBox.margin></DatePicker>

@@ -5,9 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -16,6 +14,7 @@ import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class IMatCheckoutController {
@@ -43,6 +42,7 @@ public class IMatCheckoutController {
     @FXML
     public void initialize() {
         refreshCartItems();
+        loadCardCredentials();
     }
 
     public void refreshCartItems() {
@@ -75,7 +75,7 @@ public class IMatCheckoutController {
         Product product = item.getProduct();
 
         // Directly set the image without checking for file existence
-        String imagePath = "file:C:\\Users\\JCL\\iMat_projekt_indammning\\iMat projekt\\iMatApp\\src\\" + product.getImageName();
+        String imagePath = "/images/" + product.getImageName();
         itemImage.setImage(new Image(imagePath));
 
         VBox itemDetails = new VBox();
@@ -164,6 +164,31 @@ public class IMatCheckoutController {
     private AnchorPane Checkout5;
 
     @FXML
+    private TextField cardHolderTextField;
+
+    @FXML
+    private TextField cardNumberTextField;
+
+    @FXML
+    private TextField securityCodeTextField;
+
+    @FXML
+    private DatePicker expirationDatePicker;
+
+    UserSession currentUserSession;
+
+    User currentUser = currentUserSession.getCurrentUser();
+
+    private void loadCardCredentials(){
+        cardHolderTextField.setText(currentUser.getHoldersName());
+        cardNumberTextField.setText(currentUser.getCardNumber());
+        securityCodeTextField.setText(String.valueOf(currentUser.getSecurityCode()));
+        if (currentUser.getExpirationMonth() > 0 && currentUser.getExpirationYear() > 0) {
+            expirationDatePicker.setValue(LocalDate.of(currentUser.getExpirationYear(), currentUser.getExpirationMonth(), 1));
+        }
+    }
+
+    @FXML
     private void showHomePageView() throws IOException {
         ViewSwitcher.switchTo("/imat/VaruSida.fxml");
     }
@@ -176,9 +201,7 @@ public class IMatCheckoutController {
         Checkout2.toFront();
     }
 
-    public void openCheckOut3() {
-        Checkout3.toFront();
-    }
+    public void openCheckOut3() { Checkout3.toFront(); }
 
     public void openCheckOut4() {
         Checkout4.toFront();

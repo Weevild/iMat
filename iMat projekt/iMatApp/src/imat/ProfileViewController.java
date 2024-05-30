@@ -20,7 +20,6 @@ import se.chalmers.cse.dat216.project.Order;
 public class ProfileViewController {
 
     ViewSwitcher viewSwitcher = new ViewSwitcher();
-    registerController registerController = new registerController();
 
     @FXML
     private Button loginButton;
@@ -89,10 +88,7 @@ public class ProfileViewController {
         setupEditableFieldsForAddress(addressChangeButton, addressTextField, postalCodeTextField, cityTextField, apartmentNumberTextField);
         setupEditableTextField(emailTextField, emailChangeButton, this::changeEmail);
         setupEditableTextField(phoneTextField, phoneChangeButton, this::changePhone);
-        setupEditableTextField(cardHolderTextField, cardChangeButton, this::changeCardHolder);
-        setupEditableTextField(cardNumberTextField, cardChangeButton, this::changeCardNumber);
-        setupEditableTextField(securityCodeTextField, cardChangeButton, this::changeSecurityCode);
-        setupEditableDatePicker(expirationDatePicker, cardChangeButton, this::changeExpirationDate);
+        setupEditableFieldsForCard(cardChangeButton, expirationDatePicker,cardHolderTextField, cardNumberTextField, securityCodeTextField);
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("IMatCheckout.fxml"));
@@ -117,24 +113,29 @@ public class ProfileViewController {
         UserSession.setCurrentUser(user);
         System.out.println("Setting current user in ProfileViewController: " + (user != null ? user.getFirstName() + " " + user.getLastName() : "null"));
         if (user != null) {
-            updateProfileLabels();
+            updateProfileTextFields();
         } else {
             System.out.println("Current user is null in setCurrentUser.");
         }
     }
 
-    private void updateProfileLabels() {
+    private void updateProfileTextFields() {
         if (currentUser != null) {
-            System.out.println("Updating profile labels for user: " + currentUser.getFirstName() + " " + currentUser.getLastName());
-            currentNameLabel.setText(currentUser.getFirstName() + " " + currentUser.getLastName());
-            currentEmailLabel.setText(currentUser.getEmail());
-            currentPhoneLabel.setText(currentUser.getPhone());
-            currentAddressLabel.setText(currentUser.getAddress() + " " + currentUser.getPostalCode() + " " + currentUser.getCity() + " " + currentUser.getApartmentNumber());
+            nameTextField.setText(currentUser.getFirstName() + " " + currentUser.getLastName());
+            emailTextField.setText(currentUser.getEmail());
+            phoneTextField.setText(currentUser.getPhone());
+            addressTextField.setText(currentUser.getAddress());
+            postalCodeTextField.setText(currentUser.getPostalCode());
+            cityTextField.setText(currentUser.getCity());
+            apartmentNumberTextField.setText(currentUser.getApartmentNumber());
             cardHolderTextField.setText(currentUser.getHoldersName());
             cardNumberTextField.setText(currentUser.getCardNumber());
             securityCodeTextField.setText(String.valueOf(currentUser.getSecurityCode()));
+            if (currentUser.getExpirationMonth() > 0 && currentUser.getExpirationYear() > 0) {
+                expirationDatePicker.setValue(LocalDate.of(currentUser.getExpirationYear(), currentUser.getExpirationMonth(), 1));
+            }
         } else {
-            System.out.println("Current user is null in updateProfileLabels.");
+            System.out.println("Current user is null in updateProfileTextFields.");
         }
     }
 
@@ -167,7 +168,28 @@ public class ProfileViewController {
                         makeUneditable(tf);
                     }
                     changeAddress(); // Change address details when Enter is pressed
-                    updateProfileLabels(); // Update labels immediately after changing
+                }
+            });
+        }
+    }
+
+    private void setupEditableFieldsForCard(Button changeButton, DatePicker datePicker, TextField... textFields) {
+        changeButton.setOnMouseClicked(event -> {
+            for (TextField textField : textFields) {
+                makeEditable(textField);
+                textField.setStyle(""); // Clear previous error styles
+            }
+            datePicker.setEditable(true);
+            datePicker.setStyle("");
+            textFields[0].requestFocus(); // Set focus to the first text field
+        });
+        for (TextField textField : textFields) {
+            textField.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    for (TextField tf : textFields) {
+                        makeUneditable(tf);
+                    }
+                    changeCardInformation(); // Change card details when Enter is pressed
                 }
             });
         }
@@ -183,23 +205,6 @@ public class ProfileViewController {
             if (event.getCode() == KeyCode.ENTER) {
                 makeUneditable(textField);
                 changeMethod.run();
-                updateProfileLabels(); // Update labels immediately after changing
-            }
-        });
-    }
-
-    private void setupEditableDatePicker(DatePicker datePicker, Button changeButton, Runnable changeMethod) {
-        changeButton.setOnMouseClicked(event -> {
-            datePicker.setEditable(true);
-            datePicker.setStyle(""); // Clear previous error styles
-            datePicker.requestFocus();
-        });
-
-        datePicker.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                makeUneditable(datePicker);
-                changeMethod.run();
-                updateProfileLabels(); // Update labels immediately after changing
             }
         });
     }
@@ -212,10 +217,6 @@ public class ProfileViewController {
 
     private void makeUneditable(TextField textField) {
         textField.setEditable(false);
-    }
-
-    private void makeUneditable(DatePicker datePicker) {
-        datePicker.setEditable(false);
     }
 
     @FXML
@@ -274,39 +275,16 @@ public class ProfileViewController {
     }
 
     @FXML
-    private void changeCardHolder() {
-        String newCardHolder = cardHolderTextField.getText();
-        if (currentUser != null) {
-            currentUser.setHoldersName(newCardHolder);
-            UserDataHandler.saveUserList();
-        }
-    }
-
-    @FXML
-    private void changeCardNumber() {
-        String newCardNumber = cardNumberTextField.getText();
-        if (currentUser != null) {
-            currentUser.setCardNumber(newCardNumber);
-            UserDataHandler.saveUserList();
-        }
-    }
-
-    @FXML
-    private void changeSecurityCode() {
-        String newSecurityCodeString = securityCodeTextField.getText();
-        int newSecurityCode = Integer.parseInt(newSecurityCodeString);
-        if (currentUser != null) {
-            currentUser.setSecurityCode(newSecurityCode);
-            UserDataHandler.saveUserList();
-        }
-    }
-
-    @FXML
-    private void changeExpirationDate() {
+    private void changeCardInformation() {
         LocalDate newExpirationDate = expirationDatePicker.getValue();
         if (currentUser != null) {
-            currentUser.setExpirationMonth(newExpirationDate.getMonthValue());
-            currentUser.setExpirationYear(newExpirationDate.getYear());
+            currentUser.setHoldersName(cardHolderTextField.getText());
+            currentUser.setCardNumber(cardNumberTextField.getText());
+            currentUser.setSecurityCode(Integer.parseInt(securityCodeTextField.getText()));
+            if(newExpirationDate != null){
+                currentUser.setExpirationMonth(newExpirationDate.getMonthValue());
+                currentUser.setExpirationYear(newExpirationDate.getYear());
+            }
             UserDataHandler.saveUserList();
         }
     }
@@ -319,16 +297,6 @@ public class ProfileViewController {
     private void clearError(TextField textField) {
         textField.setStyle("");
         textField.setPromptText("");
-    }
-
-    private void displayError(DatePicker datePicker, String message) {
-        datePicker.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
-        datePicker.setPromptText(message);
-    }
-
-    private void clearError(DatePicker datePicker) {
-        datePicker.setStyle("");
-        datePicker.setPromptText("");
     }
 
     @FXML
