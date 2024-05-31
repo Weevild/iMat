@@ -42,7 +42,6 @@ public class IMatCheckoutController {
     @FXML
     public void initialize() {
         refreshCartItems();
-        loadCardCredentials();
     }
 
     public void refreshCartItems() {
@@ -163,30 +162,6 @@ public class IMatCheckoutController {
     @FXML
     private AnchorPane Checkout5;
 
-    @FXML
-    private TextField cardHolderTextField;
-
-    @FXML
-    private TextField cardNumberTextField;
-
-    @FXML
-    private TextField securityCodeTextField;
-
-    @FXML
-    private DatePicker expirationDatePicker;
-
-    UserSession currentUserSession;
-
-    User currentUser = currentUserSession.getCurrentUser();
-
-    private void loadCardCredentials(){
-        cardHolderTextField.setText(currentUser.getHoldersName());
-        cardNumberTextField.setText(currentUser.getCardNumber());
-        securityCodeTextField.setText(String.valueOf(currentUser.getSecurityCode()));
-        if (currentUser.getExpirationMonth() > 0 && currentUser.getExpirationYear() > 0) {
-            expirationDatePicker.setValue(LocalDate.of(currentUser.getExpirationYear(), currentUser.getExpirationMonth(), 1));
-        }
-    }
 
     @FXML
     private void showHomePageView() throws IOException {
